@@ -297,7 +297,7 @@ def copy_df(df):
 	return df
 
 st.title('Baixar KML')
-setor = st.text_input("Digite o número do setor", value=317130305000071, format="%d", step=1)
+setor = st.text_input("Digite o número do setor", value=317130305000071)
 if st.button("Gerar KML no sistema"):
 	with st.spinner('Processando, por favor aguarde...'):
 		dados = load_data(setor)

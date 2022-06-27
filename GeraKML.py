@@ -297,7 +297,7 @@ def copy_df(df):
 	return df
 
 st.title('Baixar KML')
-setor = st.number_input("Digite o número do setor", value=317130305000071, format="%d", step=1)
+setor = st.text_input("Digite o número do setor", value=317130305000071, format="%d", step=1)
 if st.button("Gerar KML no sistema"):
 	with st.spinner('Processando, por favor aguarde...'):
 		dados = load_data(setor)
@@ -307,7 +307,7 @@ if st.button("Gerar KML no sistema"):
 		#print (len(dados))
 	if len(dados) > 10000:
 		st.success('Arquivos gerados com sucesso!')
-		st.download_button(label="Download do KML", data=dados, file_name="setor.kml", mime='text/csv')
+		st.download_button(label="Download do KML", data=dados, file_name="setor.kml", mime='text/kml')
 		st.map(map)
 		st.dataframe(df)
 	else:
